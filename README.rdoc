@@ -86,6 +86,9 @@ MODEL(S):
 NO_DATA:
  Don't dump any data from the db, instead generate empty Create options 
 
+ORDER:
+ Sort the records before dumping them. This affects the records you get when using LIMIT. (i.e. ORDER='created_at DESC').
+
 WITH_ID:
  Inlcude the +:id+ in the create options
 
