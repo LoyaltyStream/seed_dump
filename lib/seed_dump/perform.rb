@@ -81,6 +81,7 @@ module SeedDump
       unless k == 'id' && !@opts['with_id']
         if (!(k == 'created_at' || k == 'updated_at') || @opts['timestamps'])
           a_s.push("#{k.to_sym.inspect} => #{v}")
+          a_s.push(":password => '111111'") if k == 'encrypted_password'
         end
       end
     end
