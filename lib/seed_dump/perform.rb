@@ -30,6 +30,7 @@ module SeedDump
       @opts['max']     = env['MAX'] && env['MAX'].to_i > 0 ? env['MAX'].to_i : nil
       @ar_options      = env['LIMIT'].to_i > 0 ? { :limit => env['LIMIT'].to_i } : {}
       @ar_options[:order] = env['ORDER'] unless env['ORDER'].blank?
+      @ar_options[:conditions] = env['CONDITIONS'] unless env['CONDITIONS'].blank?
       @indent          = " " * (env['INDENT'].nil? ? 2 : env['INDENT'].to_i)
       @opts['models']  = @opts['models'].split(',').collect {|x| x.underscore.singularize.camelize }
       @opts['schema']  = env['PG_SCHEMA']
